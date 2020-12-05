@@ -1,8 +1,21 @@
+
 public class ContaCorrente extends ContaBancaria {
 
-    int taxa;
+    double taxa;
 
-    public int getTaxa() {
+    // polimorfismo estatico ou de sobrecarga
+    public ContaCorrente(String numeroConta, double saldo, double taxa) {
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
+        this.taxa = taxa;
+    }
+
+    // polimorfismo estatico ou de sobrecarga
+    public ContaCorrente() {
+
+    }
+
+    public double getTaxa() {
         return taxa;
     }
 
@@ -12,7 +25,11 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public void sacar(double valor) {
-
+        if (valor > saldo) System.out.println("Operação recusada - Saldo insuficiente");
+        else {
+            saldo -= valor;
+            System.out.println("Operação aprovada");
+        }
     }
 
     @Override
@@ -31,5 +48,14 @@ public class ContaCorrente extends ContaBancaria {
                 "   Numero: " + numeroConta + "\n" +
                 "   Saldo: " + saldo + "\n" +
                 "   Taxa:" + taxa + "\n}");
+    }
+
+    @Override
+    public String toString() {
+        return "ContaCorrente{" +
+                "taxa=" + taxa +
+                ", saldo=" + saldo +
+                ", numeroConta='" + numeroConta + '\'' +
+                '}';
     }
 }
