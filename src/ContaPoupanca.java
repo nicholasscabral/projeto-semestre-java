@@ -2,10 +2,16 @@ public class ContaPoupanca extends ContaBancaria {
 
     double limite;
 
+    // polimorfismo estatico ou de sobrecarga
     public ContaPoupanca(String numeroConta, double saldo, double limite) {
         this.numeroConta = numeroConta;
         this.saldo = saldo;
         this.limite = limite;
+    }
+
+    // polimorfismo estatico ou de sobrecarga
+    public ContaPoupanca() {
+
     }
 
     @Override
@@ -26,5 +32,14 @@ public class ContaPoupanca extends ContaBancaria {
     @Override
     public void DadosConta() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "ContaPoupanca{" +
+                "limite=" + limite +
+                ", saldo=" + saldo +
+                ", numeroConta='" + numeroConta + '\'' +
+                '}';
     }
 }

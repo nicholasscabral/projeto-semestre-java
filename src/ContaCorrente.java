@@ -1,4 +1,3 @@
-
 public class ContaCorrente extends ContaBancaria {
 
     double taxa;
@@ -28,18 +27,22 @@ public class ContaCorrente extends ContaBancaria {
         if (valor > saldo) System.out.println("Operação recusada - Saldo insuficiente");
         else {
             saldo -= valor;
-            System.out.println("Operação aprovada");
         }
     }
 
     @Override
     public void depositar(double valor) {
-
+        saldo += valor;
     }
 
     @Override
     public void transferir(double valor, ContaBancaria conta) {
-
+        if (valor > saldo) System.out.println("Operação recusada - Saldo insuficiente");
+        else {
+            this.sacar(valor);
+            conta.depositar(valor);
+            System.out.println("Transferencia realizada");
+        }
     }
 
     @Override
