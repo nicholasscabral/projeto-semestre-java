@@ -1,3 +1,5 @@
+package Contas;
+
 public class ContaPoupanca extends ContaBancaria {
 
     double limite;
@@ -30,13 +32,13 @@ public class ContaPoupanca extends ContaBancaria {
     }
 
     @Override
-    public void DadosConta() {
+    public void MostrarDadosConta() {
 
     }
 
     @Override
     public String toString() {
-        return "ContaPoupanca{" +
+        return "Contas.ContaPoupanca{" +
                 "limite=" + limite +
                 ", saldo=" + saldo +
                 ", numeroConta='" + numeroConta + '\'' +

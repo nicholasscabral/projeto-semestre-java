@@ -1,3 +1,5 @@
+package Contas;
+
 public class ContaCorrente extends ContaBancaria {
 
     double taxa;
@@ -46,7 +48,7 @@ public class ContaCorrente extends ContaBancaria {
     }
 
     @Override
-    public void DadosConta() {
+    public void MostrarDadosConta() {
         System.out.println("Dados da conta ={\n" +
                 "   Numero: " + numeroConta + "\n" +
                 "   Saldo: " + saldo + "\n" +
@@ -55,7 +57,7 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public String toString() {
-        return "ContaCorrente{" +
+        return "Contas.ContaCorrente{" +
                 "taxa=" + taxa +
                 ", saldo=" + saldo +
                 ", numeroConta='" + numeroConta + '\'' +

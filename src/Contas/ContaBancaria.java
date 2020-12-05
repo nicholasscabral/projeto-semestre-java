@@ -1,4 +1,6 @@
-public abstract class ContaBancaria implements DadosConta {
+package Contas;
+
+public abstract class ContaBancaria implements MostrarDadosConta {
 
     double saldo;
     String numeroConta;
@@ -25,7 +27,7 @@ public abstract class ContaBancaria implements DadosConta {
 
     @Override
     public String toString() {
-        return "ContaBancaria{" +
+        return "Contas.ContaBancaria{" +
                 "saldo=" + saldo +
                 ", numeroConta='" + numeroConta + '\'' +
                 '}';
