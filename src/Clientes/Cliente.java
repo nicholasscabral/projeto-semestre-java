@@ -1,3 +1,5 @@
+package Clientes;
+
 import Contas.ContaBancaria;
 import Contas.ContaCorrente;
 import Contas.ContaPoupanca;
@@ -46,7 +48,7 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "Clientes.Cliente{" +
                 "tipoDeConta='" + tipoDeConta + '\'' +
                 ", conta=" + conta +
                 ", nome='" + nome + '\'' +

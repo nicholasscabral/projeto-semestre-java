@@ -1,3 +1,4 @@
+import Clientes.Cliente;
 import Contas.ContaCorrente;
 import Contas.Contas;
 
@@ -18,5 +19,10 @@ public class Teste {
         cc.transferir(100, cc1);
         System.out.println(cc.getSaldo());
         System.out.println(cc1.getSaldo());
+
+        Cliente nicholas = new Cliente("nicholas", "111222", "Corrente");
+        nicholas.CriarConta("111222333444", 8000, 0.1);
+
+        nicholas.MostrarDadosCliente();
     }
 }

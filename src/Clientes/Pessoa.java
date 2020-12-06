@@ -1,3 +1,5 @@
+package Clientes;
+
 public abstract class Pessoa {
     String nome, cpf;
 
@@ -22,7 +24,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "Clientes.Pessoa{" +
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 '}';
