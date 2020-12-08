@@ -26,9 +26,4 @@ public class Teste {
         nicholas.CriarConta(nicholas.getTipoDeConta());
         nicholas.MostrarDadosCliente();
     }
-
-
-
-
-
 }
