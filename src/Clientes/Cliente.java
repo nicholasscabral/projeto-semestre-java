@@ -17,7 +17,7 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
     public Cliente(String nome, String cpf, String tipoDeConta) {
         this.nome = nome;
         this.cpf = cpf;
-        this.tipoDeConta = tipoDeConta;
+        this.CriarConta(tipoDeConta);
     }
 
     public Cliente() {
@@ -26,24 +26,38 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
 
     @Override
     public void CriarConta(String tipoDeConta) {
-        if (tipoDeConta.equals("Corrente")) {
+        if (tipoDeConta.equals("Corrente") || tipoDeConta.equals("corrente")) {
             String numeroConta = "";
             for (int i = 0; i < 12; i++) {
                 numeroConta += String.valueOf(gerarRandom.nextInt(9));
             }
-            System.out.println("saldo ");
-            double saldo = input.nextDouble();
-            System.out.println("taxa");
-            double taxa = input.nextDouble();
+            this.conta = new ContaCorrente(numeroConta, 1000, 0.05);
 
-            this.conta = new ContaCorrente(numeroConta, saldo, taxa);
-
+        }
+        else if (tipoDeConta.equals("Poupanca") || tipoDeConta.equals("poupanca")) {
+            String numeroConta = "";
+            for (int i = 0; i < 12; i++) {
+                numeroConta += String.valueOf(gerarRandom.nextInt(9));
+            }
+            this.conta = new ContaPoupanca(numeroConta, 1000, 500);
         }
     }
 
     @Override
     public void ExcluirConta() {
+        this.conta = null;
+    }
 
+    public void transferir(double valor, Cliente cliente) {
+        if (valor > conta.getSaldo()) System.out.println("Operação negada - Saldo insuficiente");
+        else {
+            this.conta.transferir(valor, cliente.conta);
+            System.out.println("Tranferencia Realizada");
+        }
+    }
+
+    public ContaBancaria getConta() {
+        return conta;
     }
 
     public String getTipoDeConta() {

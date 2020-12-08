@@ -1,6 +1,9 @@
 import Clientes.Cliente;
+import Clientes.Clientes;
 import Contas.ContaCorrente;
 import Contas.Contas;
+
+import java.util.Scanner;
 
 public class Teste {
     public static void main(String[] args) {
@@ -21,8 +24,23 @@ public class Teste {
         System.out.println(cc1.getSaldo()); */
 
         Cliente nicholas = new Cliente("nicholas", "111222", "Corrente");
+        Cliente laura = new Cliente("laura", "333222111", "Poupanca");
 
-        nicholas.CriarConta(nicholas.getTipoDeConta());
-        nicholas.MostrarDadosCliente();
+        Clientes ListaDeClientes = new Clientes();
+
+        ListaDeClientes.addCliente(nicholas);
+        ListaDeClientes.addCliente(laura);
+
+        //ListaDeClientes.MostrarDadosCliente();
+
+        nicholas.transferir(10000, laura);
+
+        //ListaDeClientes.MostrarDadosCliente();
+
+        System.out.println(nicholas.getConta());
+
+        nicholas.ExcluirConta();
+
+        System.out.println(nicholas.getConta());
     }
 }

@@ -43,13 +43,13 @@ public class ContaCorrente extends ContaBancaria {
         else {
             this.sacar(valor);
             conta.depositar(valor);
-            System.out.println("Transferencia realizada");
         }
     }
 
     @Override
     public void MostrarDadosConta() {
         System.out.println("Dados da conta {\n" +
+                "   Tipo: Corrente \n" +
                 "   Numero: " + numeroConta + "\n" +
                 "   Saldo: " + saldo + "\n" +
                 "   Taxa:" + taxa + "\n}");
@@ -58,8 +58,9 @@ public class ContaCorrente extends ContaBancaria {
     @Override
     public String toString() {
         return  "   Dados da conta {\n" +
+                "      Tipo: Corrente \n" +
                 "      Numero: " + numeroConta + "\n" +
                 "      Saldo: " + saldo + "\n" +
-                "      Taxa:" + taxa + "\n   }";
+                "      Taxa: " + taxa + "\n   }";
     }
 }

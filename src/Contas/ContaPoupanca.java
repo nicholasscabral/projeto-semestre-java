@@ -23,7 +23,7 @@ public class ContaPoupanca extends ContaBancaria {
 
     @Override
     public void depositar(double valor) {
-
+        saldo += valor;
     }
 
     @Override
@@ -33,15 +33,19 @@ public class ContaPoupanca extends ContaBancaria {
 
     @Override
     public void MostrarDadosConta() {
-
+        System.out.println("Dados da conta {\n" +
+                "   Tipo: Poupança \n" +
+                "   Numero: " + numeroConta + "\n" +
+                "   Saldo: " + saldo + "\n" +
+                "   Limite: " + limite + "\n}");
     }
 
     @Override
     public String toString() {
-        return "Contas.ContaPoupanca{" +
-                "limite=" + limite +
-                ", saldo=" + saldo +
-                ", numeroConta='" + numeroConta + '\'' +
-                '}';
+        return  "   Dados da conta {\n" +
+                "      Tipo: Poupança \n" +
+                "      Numero: " + numeroConta + "\n" +
+                "      Saldo: " + saldo + "\n" +
+                "      Limite: " + limite + "\n   }";
     }
 }
