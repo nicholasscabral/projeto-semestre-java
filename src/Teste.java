@@ -23,6 +23,10 @@ public class Teste {
         Cliente nicholas = new Cliente("nicholas", "111222", "Corrente");
 
 
+
+
+
+
         nicholas.CriarConta(nicholas.getTipoDeConta());
         nicholas.MostrarDadosCliente();
     }
