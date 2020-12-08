@@ -49,7 +49,7 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public void MostrarDadosConta() {
-        System.out.println("Dados da conta ={\n" +
+        System.out.println("Dados da conta {\n" +
                 "   Numero: " + numeroConta + "\n" +
                 "   Saldo: " + saldo + "\n" +
                 "   Taxa:" + taxa + "\n}");
@@ -57,10 +57,9 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public String toString() {
-        return "Contas.ContaCorrente{" +
-                "taxa=" + taxa +
-                ", saldo=" + saldo +
-                ", numeroConta='" + numeroConta + '\'' +
-                '}';
+        return  "   Dados da conta {\n" +
+                "      Numero: " + numeroConta + "\n" +
+                "      Saldo: " + saldo + "\n" +
+                "      Taxa:" + taxa + "\n   }";
     }
 }

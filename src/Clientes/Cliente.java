@@ -4,10 +4,15 @@ import Contas.ContaBancaria;
 import Contas.ContaCorrente;
 import Contas.ContaPoupanca;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Cliente extends Pessoa implements MostrarDadosCliente {
 
     String tipoDeConta;
     ContaBancaria conta;
+    Scanner input = new Scanner(System.in);
+    Random gerarRandom = new Random();
 
     public Cliente(String nome, String cpf, String tipoDeConta) {
         this.nome = nome;
@@ -20,9 +25,20 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
     }
 
     @Override
-    public void CriarConta(String numeroConta, double saldo, double taxa) {
-        if (tipoDeConta.equals("Corrente")) new ContaCorrente(numeroConta, saldo, taxa);
-        else if (tipoDeConta.equals("Poupanca")) new ContaPoupanca();
+    public void CriarConta(String tipoDeConta) {
+        if (tipoDeConta.equals("Corrente")) {
+            String numeroConta = "";
+            for (int i = 0; i < 12; i++) {
+                numeroConta += String.valueOf(gerarRandom.nextInt(9));
+            }
+            System.out.println("saldo ");
+            double saldo = input.nextDouble();
+            System.out.println("taxa");
+            double taxa = input.nextDouble();
+
+            this.conta = new ContaCorrente(numeroConta, saldo, taxa);
+
+        }
     }
 
     @Override
@@ -43,7 +59,7 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
         System.out.println("Dados do cliente {\n" +
                 "   Nome: " + nome + "\n" +
                 "   Cpf: " + cpf + "\n" +
-                "   Conta: ");
+                conta + "\n}");
     }
 
     @Override
