@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Clientes implements MostrarDadosCliente {
 
-    ArrayList<Cliente> Clientes = new ArrayList<>();
+    ArrayList<Cliente> ListaDeClientes = new ArrayList<>();
 
     public void addCliente(Cliente cliente) {
-        Clientes.add(cliente);
+        ListaDeClientes.add(cliente);
     }
 
     @Override
     public void MostrarDadosCliente() {
-        Clientes.forEach(Cliente::MostrarDadosCliente);
+        ListaDeClientes.forEach(Cliente::MostrarDadosCliente);
     }
 }

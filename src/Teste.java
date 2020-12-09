@@ -23,24 +23,19 @@ public class Teste {
         System.out.println(cc.getSaldo());
         System.out.println(cc1.getSaldo()); */
 
-        Cliente nicholas = new Cliente("nicholas", "111222", "Corrente");
-        Cliente laura = new Cliente("laura", "333222111", "Poupanca");
+
 
         Clientes ListaDeClientes = new Clientes();
+        Contas ListaDeContas = new Contas();
+
+        Cliente nicholas = new Cliente("nicholas", "111222", "Corrente");
+        Cliente laura = new Cliente("laura", "333222111", "Poupanca");
 
         ListaDeClientes.addCliente(nicholas);
         ListaDeClientes.addCliente(laura);
 
-        //ListaDeClientes.MostrarDadosCliente();
+        //ListaDeContas.MostrarDadosConta();
 
-        nicholas.transferir(10000, laura);
-
-        //ListaDeClientes.MostrarDadosCliente();
-
-        System.out.println(nicholas.getConta());
-
-        nicholas.ExcluirConta();
-
-        System.out.println(nicholas.getConta());
+        //System.out.println(ListaDeContas);
     }
 }
