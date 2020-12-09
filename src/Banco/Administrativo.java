@@ -1,10 +1,12 @@
 package Banco;
 
+import Clientes.Cliente;
+
 public class Administrativo extends Banco {
 
     @Override
-    public void CadastrarCliente() {
-
+    public Cliente CadastrarCliente(String nome, String cpf, String tipoDeConta) {
+        return new Cliente(nome, cpf, tipoDeConta);
     }
 
     @Override

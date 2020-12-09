@@ -5,13 +5,11 @@ import Contas.ContaCorrente;
 import Contas.ContaPoupanca;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Cliente extends Pessoa implements MostrarDadosCliente {
 
     String tipoDeConta;
     ContaBancaria conta;
-    Scanner input = new Scanner(System.in);
     Random gerarRandom = new Random();
 
     public Cliente(String nome, String cpf, String tipoDeConta) {
@@ -32,7 +30,7 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
                 numeroConta += String.valueOf(gerarRandom.nextInt(9));
             }
             this.conta = new ContaCorrente(numeroConta, 1000, 0.05);
-
+            System.out.println("Cliente Cadastrado!");
         }
         else if (tipoDeConta.equals("Poupanca") || tipoDeConta.equals("poupanca")) {
             String numeroConta = "";
@@ -40,7 +38,9 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
                 numeroConta += String.valueOf(gerarRandom.nextInt(9));
             }
             this.conta = new ContaPoupanca(numeroConta, 1000, 500);
+            System.out.println("Cliente Cadastrado!");
         }
+        //else System.out.println("Cliente cadastrado com conta nula");
     }
 
     @Override
@@ -73,7 +73,7 @@ public class Cliente extends Pessoa implements MostrarDadosCliente {
         System.out.println("Dados do cliente {\n" +
                 "   Nome: " + nome + "\n" +
                 "   Cpf: " + cpf + "\n" +
-                conta + "\n}");
+                "   Conta: " + conta + "\n}");
     }
 
     @Override

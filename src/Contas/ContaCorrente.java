@@ -57,7 +57,7 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public String toString() {
-        return  "   Dados da conta {\n" +
+        return  "{\n" +
                 "      Tipo: Corrente \n" +
                 "      Numero: " + numeroConta + "\n" +
                 "      Saldo: " + saldo + "\n" +
