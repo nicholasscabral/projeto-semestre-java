@@ -84,8 +84,9 @@ public class Menu {
                     break;
                 }
                 else {
-                    System.out.println("operação inválida");
-                    break;
+                    System.out.println("operação inválida, deseja realizar outra operação?");
+                    refazer = input.nextBoolean();
+
                 }
             } catch (InputMismatchException exception) {
                 System.out.println("cancelando execução o programa");
