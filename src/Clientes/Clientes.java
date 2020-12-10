@@ -10,8 +10,19 @@ public class Clientes implements MostrarDadosCliente {
         ListaDeClientes.add(cliente);
     }
 
+    public ArrayList<Cliente> getLista() {
+        return ListaDeClientes;
+    }
+
     @Override
     public void MostrarDadosCliente() {
         ListaDeClientes.forEach(Cliente::MostrarDadosCliente);
+    }
+
+    @Override
+    public String toString() {
+        return "Clientes{" +
+                "ListaDeClientes=" + ListaDeClientes +
+                '}';
     }
 }
