@@ -1,6 +1,7 @@
 package Banco;
 
 import Clientes.Cliente;
+import java.util.ArrayList;
 
 public class Administrativo extends Banco {
 
@@ -10,8 +11,8 @@ public class Administrativo extends Banco {
     }
 
     @Override
-    public void RemoverCliente() {
-
+    public void RemoverCliente(ArrayList lista, Cliente cliente) {
+        lista.remove(cliente);
     }
 
     @Override
