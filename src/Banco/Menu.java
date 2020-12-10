@@ -64,13 +64,21 @@ public class Menu {
                     System.out.println("CPF do cliente que deseja excluir");
                     String cpf = input.next();
 
+                    boolean existe = false;
                     for (Cliente cliente : ListaDeCliente){
                         String cpfCliente = cliente.getCpf();
                         if (cpfCliente.equals(cpf)) {
                             gerencia.RemoverCliente(ListaDeCliente, cliente);
                             System.out.println("Cliente de cpf: " + cpfCliente + " excluido com sucesso.");
+                            existe = true;
                         }
                     }
+                    if (!existe) {
+                        System.out.println("Cliente nao encontrado");
+                    }
+
+                    System.out.println("Deseja realizar outra operação");
+                    refazer = input.nextBoolean();
                 }
                 else if (fazer == 3) {
                     Clientes.MostrarDadosCliente();
@@ -101,8 +109,7 @@ public class Menu {
             } catch (InputMismatchException exception) {
                 System.out.println("Processo finalizado");
                 break;
-            }
-            catch (NullPointerException exception) {
+            } catch (NullPointerException exception) {
                 System.out.println("a conta digitada é nula");
             }
         }
