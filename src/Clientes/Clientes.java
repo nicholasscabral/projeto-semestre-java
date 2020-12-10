@@ -6,12 +6,18 @@ public class Clientes implements MostrarDadosCliente {
 
     ArrayList<Cliente> ListaDeClientes = new ArrayList<>();
 
-    public void addCliente(Cliente cliente) {
-        ListaDeClientes.add(cliente);
+    public Clientes(Cliente cliente) {
+        this.addCliente(cliente);
     }
 
     public ArrayList<Cliente> getLista() {
         return ListaDeClientes;
+    }
+
+    public Clientes () {}
+
+    public void addCliente(Cliente cliente) {
+        ListaDeClientes.add(cliente);
     }
 
     @Override

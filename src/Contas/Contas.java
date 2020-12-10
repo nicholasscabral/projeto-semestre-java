@@ -10,6 +10,10 @@ public class Contas implements MostrarDadosConta {
         this.addConta(conta);
     }
 
+    public ArrayList<ContaBancaria> getLista() {
+        return ListaDeContas;
+    }
+
     public Contas () {}
 
     public void addConta(ContaBancaria conta) {
