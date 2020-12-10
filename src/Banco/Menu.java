@@ -102,6 +102,9 @@ public class Menu {
                 System.out.println("Processo finalizado");
                 break;
             }
+            catch (NullPointerException exception) {
+                System.out.println("a conta digitada é nula");
+            }
         }
     }
 }
