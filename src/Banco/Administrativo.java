@@ -16,7 +16,9 @@ public class Administrativo extends Banco {
     }
 
     @Override
-    public void MostrarDadosBanco() {
-
+    public void MostrarDadosBanco(int a, int b) {
+        System.out.println("Dados do Banco {\n" +
+                "   Numero de Clientes: " + a + "\n" +
+                "   Numero de Contas: " + b + "\n}");
     }
 }
