@@ -83,6 +83,10 @@ public class Menu {
                 else if (fazer == 5) {
                     break;
                 }
+                else {
+                    System.out.println("operação inválida");
+                    break;
+                }
             } catch (InputMismatchException exception) {
                 System.out.println("cancelando execução o programa");
                 break;
