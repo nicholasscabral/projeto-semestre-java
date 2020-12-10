@@ -6,6 +6,7 @@ import Contas.Contas;
 import Contas.ContaBancaria;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -111,6 +112,8 @@ public class Menu {
                 break;
             } catch (NullPointerException exception) {
                 System.out.println("a conta digitada é nula");
+            } catch (ConcurrentModificationException exception) {
+                System.out.print("");
             }
         }
     }
